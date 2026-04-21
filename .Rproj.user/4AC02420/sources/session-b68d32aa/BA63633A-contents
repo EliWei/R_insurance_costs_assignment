@@ -48,7 +48,18 @@ insurance_clean <- insurance_clean %>%
 # Kontrollera att inga saknade värden finns kvar
 colSums(is.na(insurance_clean))
 
+summary(insurance_clean$age)
+insurance_clean %>% filter(age < 20) %>% count()
+insurance_clean %>% filter(age > 70) %>% count()
 
+insurance_clean %>%
+  mutate(age_group = case_when(
+    age < 30 ~ "under 30",
+    age < 40 ~ "30-40",
+    age < 55 ~ "40-55",
+    TRUE ~ "55+"
+  )) %>%
+  count(age_group)
 #
 #
 #
