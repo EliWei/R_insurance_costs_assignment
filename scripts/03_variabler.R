@@ -1,5 +1,6 @@
 library(tidyverse)
-source("data_cleaning.R")
+library(here)
+source(here("scripts", "02_data_cleaning.R"))
 
 # Istället för att göra prognoser på alla åldrar som finns representerade 
 # i datan så skapar vi relevanta åldergrupper

@@ -1,5 +1,5 @@
-library(tidyverse)
-source("understanding_data.R")
+library(here)
+source(here("scripts", "01_understanding_data.R"))
 
 #Börjar med att städa de kategoriksa värdena 
 insurance <- insurance %>%
