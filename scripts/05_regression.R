@@ -9,7 +9,7 @@ model_1 <- lm(charges ~ smoker + chronic_condition + age + prior_accidents,
              data = insurance_clean)
 summary(model_1)
 
-# Modellen (model1) förklarar 68% av variationerna i kostnader. 
+# Modellen (model 1) förklarar 68% av variationerna i kostnader. 
 # De fyra variablerna vi tittade på är alla relevanta med p-värden på <0.05
 # Kostnaden för rökare är i genomsnitt 7,482 kr högre än för en icke-rökare
 # För de med kroniska sjukdomar ligger kostnaden 4,088 kr högre än för de utan sjukdomshistorik

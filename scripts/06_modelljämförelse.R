@@ -103,6 +103,7 @@ insurance_clean %>%
   mutate(predicted = fitted(model_3)) %>%
   group_by(plan_type) %>%
   summarise(
+    antal = n(),
     medel_faktisk = mean(charges),
     medel_förutsagd = mean(predicted),
     differens = mean(charges) - mean(predicted)
