@@ -1,0 +1,6 @@
+source("scripts/01_understanding_data.R")
+source("scripts/02_data_cleaning.R")
+source("scripts/03_variabler.R")
+source("scripts/04_analys.R")
+source("scripts/05_regression.R")
+source("scripts/06_modelljämförelse.R")

@@ -60,6 +60,10 @@ ggsave(here("output", "figures", "03_kronisk_sjukdom.png"), plot = p3, width = 8
 #BMI
 #BMI-kategori verkar ha en svagare koppling till kostnader än rökning och kronisk sjukdom.
 #Värt att notera built in bias för BMI beräkning (see diskussion i rapporten)
+insurance_clean <- insurance_clean %>%
+  mutate(bmi_category = factor(bmi_category,
+                               levels = c("underweight", "normal", "overweight", "obese")))
+
 p4 <- ggplot(insurance_clean, aes(x = bmi_category, y = charges, fill = bmi_category)) +
   geom_boxplot() +
   labs(title = "Försäkringskostnader per BMI-kategori",

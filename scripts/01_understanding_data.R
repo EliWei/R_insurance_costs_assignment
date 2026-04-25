@@ -6,7 +6,7 @@
 library(tidyverse)
 
 # Läs in data
-insurance <- read_csv("insurance_costs.csv")
+insurance <- read_csv(here("insurance_costs.csv"))
 
 # Visa datasetets storlek
 dim(insurance)

@@ -94,3 +94,16 @@ predict(model_3, newdata = new_persons)
 # Person 2 (icke-rökare, ingen kronisk sjukdom, 45 år, 0 olyckor, hög träning): 6 645 kr
 # Person 3 (icke-rökare, kronisk sjukdom, 45 år, 0 olyckor, låg träning): 12 543 kr
 # Person 4 (rökare, ingen kronisk sjukdom, 45 år, 0 olyckor, hög träning): 13 933 kr
+
+#Jämför predikterad kostnad mot kundens plan
+# Vid en jämförelse ser vi att Basic kunderna i genomsnitt kostar mindre än förväntat
+# medan Premium kunder i genomsnitt kostar mer än predikterat enligt modellen
+# Vi vet dock inte hur mycket varje kund faktiskt betalar
+insurance_clean %>%
+  mutate(predicted = fitted(model_3)) %>%
+  group_by(plan_type) %>%
+  summarise(
+    medel_faktisk = mean(charges),
+    medel_förutsagd = mean(predicted),
+    differens = mean(charges) - mean(predicted)
+  )
