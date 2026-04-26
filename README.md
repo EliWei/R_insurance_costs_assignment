@@ -15,7 +15,6 @@ R_individuell/
 │   └── 06_modelljämförelse.R
 ├── output/
 │   ├── figures/
-│   └── tables/
 ├── rapport/
 │   └── rapport_E_Weise.pdf
 ├── insurance_costs.csv
